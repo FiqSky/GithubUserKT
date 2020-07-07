@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.fiqsky.githubuserapp.R
 import com.fiqsky.githubuserapp.User
+import com.squareup.picasso.Picasso
 
 class UserAdapter internal constructor(private val context: Context) : BaseAdapter() {
     internal var users = ArrayList<User>()
@@ -30,11 +31,13 @@ class UserAdapter internal constructor(private val context: Context) : BaseAdapt
         private val tvName: TextView = view.findViewById(R.id.tv_name)
         private val tvUsername: TextView = view.findViewById(R.id.tv_username)
         private val tvLocation: TextView = view.findViewById(R.id.tv_location)
-        private val tvFollowers: TextView = view.findViewById(R.id.tv_wers)
-        private val tvFollowing: TextView = view.findViewById(R.id.tv_wing)
+        private val tvFollowers: TextView = view.findViewById(R.id.tv_followers)
+        private val tvFollowing: TextView = view.findViewById(R.id.tv_following)
 
         internal fun bind(user: User) {
-            ivAvatar.setImageResource(user.avatar)
+            Picasso.get()
+                .load(user.avatar)
+                .into(ivAvatar)
             tvName.text = user.name
             tvUsername.text = user.username
             tvLocation.text = user.location

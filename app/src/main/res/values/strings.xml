@@ -7,6 +7,8 @@
     <string name="work">Work</string>
     <string name="repository">Repository</string>
     <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="foto_profil">Foto Profil</string>
 
     <!-- Other string resources-->
     <string-array name="username">
@@ -112,7 +114,4 @@
         <item>@drawable/user9</item>
         <item>@drawable/user10</item>
     </string-array>
-
-    <!-- Root Preference -->
-
 </resources>
