@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.activity_info.*
 class InfoActivity : AppCompatActivity() {
 
     companion object {
-        const val EXTRA_MOVIE = "extra_movie"
+        const val EXTRA_USER = "extra_user"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +18,7 @@ class InfoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_info)
 
         val user = intent.getParcelableExtra<User>(
-            EXTRA_MOVIE
+            EXTRA_USER
         )
 
         if (user != null) {

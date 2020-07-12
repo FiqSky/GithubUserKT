@@ -1,15 +1,15 @@
 <resources>
-    <string name="app_name">Pengguna Github</string>
-    <string name="name">Nama</string>
+    <string name="app_name">Github Users</string>
+    <string name="name">Name</string>
     <string name="number">888</string>
     <string name="username">Username</string>
     <string name="location">Location</string>
-    <string name="work">Bekerja</string>
-    <string name="repository">Folder</string>
-    <string name="followers">Pengikut</string>
-    <string name="following">Mengikuti</string>
-    <string name="foto_profil">Foto Profil</string>
-    <string name="pengaturan">pengaturan</string>
+    <string name="work">Work</string>
+    <string name="repository">Repository</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="foto_profil">Profil Picture</string>
+    <string name="pengaturan">setting</string>
 
     <!-- Other string resources-->
     <string-array name="username">
