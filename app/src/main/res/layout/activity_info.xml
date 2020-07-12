@@ -1,154 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.InfoActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/img_avatar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_margin="5dp"
             android:adjustViewBounds="true"
             android:contentDescription="@string/foto_profil"
             android:src="@drawable/placeholder"
-            app:shapeAppearanceOverlay="@style/roundedImageView" />
+            app:shapeAppearanceOverlay="@style/cirImageView" />
 
-        <TextView
-            android:id="@+id/txt_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/img_avatar"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/layout_bg"
-            android:paddingLeft="10dp"
-            android:paddingTop="2dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="2dp"
-            android:text="@string/name"
-            android:textAllCaps="true"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/txt_username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/img_avatar"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="39dp"
-            android:layout_toEndOf="@id/txt_name"
-            android:text="@string/username"
-            android:textSize="18sp" />
-
-        <ImageView
-            android:id="@+id/img_location"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_below="@id/txt_name"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="13dp"
-            android:src="@drawable/ic_location" />
-
-        <TextView
-            android:id="@+id/txt_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_name"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_toEndOf="@id/img_location"
-            android:ellipsize="end"
-            android:text="@string/location"
-            android:textSize="20sp" />
-
-        <ImageView
-            android:id="@+id/img_work"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_below="@id/img_location"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="17dp"
-            android:src="@drawable/ic_work" />
-
-        <TextView
-            android:id="@+id/txt_work"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_location"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_toEndOf="@id/img_work"
-            android:text="@string/work"
-            android:textSize="20sp" />
-
-        <ImageView
-            android:id="@+id/img_repo"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_below="@id/img_work"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="17dp"
-            android:src="@drawable/ic_storage" />
-
-        <TextView
-            android:id="@+id/txt_repo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_work"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_toEndOf="@id/img_work"
-            android:text="@string/repository"
-            android:textSize="20sp" />
-
-        <ImageView
-            android:id="@+id/img_followers"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_below="@id/img_repo"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="18dp"
-            android:src="@drawable/ic_love_dark" />
-
-        <TextView
-            android:id="@+id/txt_followers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_repo"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_toEndOf="@id/img_followers"
-            android:text="@string/followers"
-            android:textSize="20sp" />
-
-        <ImageView
-            android:id="@+id/img_following"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_below="@id/img_repo"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="18dp"
-            android:layout_toEndOf="@id/txt_followers"
-            android:src="@drawable/ic_love" />
-
-        <TextView
-            android:id="@+id/txt_following"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_repo"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_toEndOf="@id/img_following"
-            android:text="@string/following"
-            android:textSize="20sp" />
-
-    </RelativeLayout>
-</androidx.core.widget.NestedScrollView>
+</RelativeLayout>
