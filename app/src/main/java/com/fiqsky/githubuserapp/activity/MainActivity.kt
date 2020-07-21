@@ -14,6 +14,7 @@ import com.fiqsky.githubuserapp.User
 import com.fiqsky.githubuserapp.adapter.UserAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
     private lateinit var dataName: Array<String>
@@ -35,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun getListUser(): Collection<User> {
+    private fun getListUser(): ArrayList<User> {
         dataName = resources.getStringArray(R.array.name)
         dataUsername = resources.getStringArray(R.array.username)
         dataLocation = resources.getStringArray(R.array.location)

@@ -10,6 +10,8 @@
     <string name="following">Following</string>
     <string name="foto_profil">Profil Picture</string>
     <string name="pengaturan">setting</string>
+    <string name="ikuti">Ikuti</string>
+    <string name="link">Link</string>
 
     <!-- Other string resources-->
     <string-array name="username">
