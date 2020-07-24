@@ -1,16 +1,19 @@
 package com.fiqsky.githubuserapp.adapter
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.fiqsky.githubuserapp.R
 import com.fiqsky.githubuserapp.User
-import kotlinx.android.synthetic.main.item_following.view.*
+import kotlinx.android.synthetic.main.item_user.view.*
 
-class FollowingAdapter(private val list: MutableList<User>? = mutableListOf()) :
+class FollowingAdapter(
+
+    private val list: MutableList<User>? = mutableListOf(),
+    private val onClick: ((User) -> Unit)? = null
+) :
     RecyclerView.Adapter<FollowingAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
@@ -24,11 +27,30 @@ class FollowingAdapter(private val list: MutableList<User>? = mutableListOf()) :
         holder.bind(list?.get(position))
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    fun addAll(result: List<User>?) {
+        if (result != null) {
+            list?.clear()
+            list?.addAll(result)
+            notifyDataSetChanged()
+        }
+    }
+
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(user: User?) {
-            Log.d(TAG, "bind: ")
-            itemView.img_following.setImageResource(user?.avatar ?: 0)
-            itemView.txt_following.text = user?.name
+            with(itemView) {
+                Glide.with(context)
+                    .load(user?.avatarUrl)
+                    .placeholder(R.drawable.placeholder)
+                    .error(android.R.color.darker_gray)
+                    .into(itemView.iv_avatar)
+                itemView.tv_name.text = user?.name
+                itemView.tv_username.text = user?.userName
+                itemView.setOnClickListener {
+                    if (user != null) {
+                        onClick?.invoke(user)
+                    }
+                }
+            }
         }
 
     }

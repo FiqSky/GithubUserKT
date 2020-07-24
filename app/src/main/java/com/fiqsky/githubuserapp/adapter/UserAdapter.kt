@@ -27,7 +27,7 @@ class UserAdapter(private val listuser: ArrayList<User>) : RecyclerView.Adapter<
                 .load(user.avatar)
                 .into(ivAvatar)
             tvName.text = user.name
-            tvUsername.text = user.username
+//            tvUsername.text = user.username
 
             itemView.setOnClickListener { onItemClickCallback?.onItemClicked(user) }
         }

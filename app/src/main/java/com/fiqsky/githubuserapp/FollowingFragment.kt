@@ -13,8 +13,7 @@ import kotlinx.android.synthetic.main.fragment_following.view.*
 
 class FollowingFragment : Fragment() {
 
-//    private var arrayList : ArrayList<User>? = arrayListOf()
-    private var arrayList : String = ""
+    private var arrayList: ArrayList<User>? = arrayListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,27 +22,26 @@ class FollowingFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_following, container, false)
         arguments.let {
-            arrayList = it?.getString(LIST_PARAMS).toString()
+            arrayList = it?.getParcelableArrayList(LIST_PARAMS)
         }
 
-//        view.rv_following.layoutManager = LinearLayoutManager(requireContext())
-//        view.rv_following.adapter =
-//            FollowingAdapter(arrayList)
+        view.rv_following.layoutManager = LinearLayoutManager(requireContext())
+        view.rv_following.adapter =
+            FollowingAdapter(arrayList)
 
-        Log.d(TAG, "onCreateView: "+view)
         return view
     }
 
     companion object {
         //Membuat instance baru untuk class FollowingFragment. Passing data arraylist user.
-        fun newInstance(arrayList: String): FollowingFragment {
+        fun newInstance(arrayList: ArrayList<User>): FollowingFragment {
             return FollowingFragment().apply {
                 arguments = Bundle().apply {
-                    putString(LIST_PARAMS,arrayList)
-                    Log.d(TAG, "newInstance: "+arrayList)
+                    putParcelableArrayList(LIST_PARAMS, arrayList)
                 }
             }
         }
+
         const val LIST_PARAMS = "params_list"
     }
 }

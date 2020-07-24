@@ -1,53 +1,40 @@
 package com.fiqsky.githubuserapp
 
-import android.os.Parcel
 import android.os.Parcelable
+import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class User(
-    val avatar: Int,
-    val name: String,
-    val username: String,
-    val location: String,
-    val repository: String,
-    val company: String,
-    val followers: String,
-    val following: String
+    @SerializedName("login")
+    val userName: String = "",
+    @SerializedName("avatar_url")
+    val avatarUrl: String = "",
+    @SerializedName("url")
+    val url: String = "",
+    @SerializedName("html_url")
+    val htmlUrl: String = "",
+    @SerializedName("followers_url")
+    val followersUrl: String = "",
+    @SerializedName("following_url")
+    val followingUrl: String = "",
+    @SerializedName("name")
+    val name: String = "",
+    @SerializedName("location")
+    val location: String = "",
+    @SerializedName("followers")
+    val totalFollowers: Int = 0,
+    @SerializedName("following")
+    val totalFollowing: Int = 0,
+    val company: String = "",
+    val blog: String = "",
+    val repository: String = "",
+    val followersCount: String = "",
+    val followingCount: String = "",
+    val avatar: Int = -1
+) : Parcelable
 
-
-) : Parcelable {
-    constructor(parcel: Parcel) : this(
-        parcel.readInt(),
-        parcel.readString()!!,
-        parcel.readString()!!,
-        parcel.readString()!!,
-        parcel.readString()!!,
-        parcel.readString()!!,
-        parcel.readString()!!,
-        parcel.readString()!!
-    )
-
-    override fun writeToParcel(dest: Parcel, flags: Int) {
-        dest.writeInt(avatar)
-        dest.writeString(name)
-        dest.writeString(username)
-        dest.writeString(location)
-        dest.writeString(repository)
-        dest.writeString(company)
-        dest.writeString(followers)
-        dest.writeString(following)
-    }
-
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Parcelable.Creator<User> {
-        override fun createFromParcel(parcel: Parcel): User {
-            return User(parcel)
-        }
-
-        override fun newArray(size: Int): Array<User?> {
-            return arrayOfNulls(size)
-        }
-    }
-}
+data class SearchResponse(
+    @SerializedName("items")
+    val items: List<User> = mutableListOf()
+)
