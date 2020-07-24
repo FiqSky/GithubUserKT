@@ -148,9 +148,13 @@ class InfoActivity : AppCompatActivity() {
     }
 
     private fun initDetailUser(user: User?){
+        txt_repo.text = user?.publicRepos.toString()
+        txt_followers.text = user?.totalFollowers.toString()
+        txt_followings.text = user?.totalFollowing.toString()
         txt_name.text = user?.name
-        val username = user?.userName ?: ""
-        txt_link.text = "@$username, ${user?.location}"
+        txt_location.text = user?.location
+        txt_work.text = user?.company
+        txt_link.text = user?.blog
         Glide.with(this@InfoActivity)
             .load(user?.avatarUrl)
             .placeholder(R.drawable.placeholder)

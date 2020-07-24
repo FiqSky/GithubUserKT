@@ -26,6 +26,9 @@ data class User(
     val totalFollowers: Int = 0,
     @SerializedName("following")
     val totalFollowing: Int = 0,
+    @SerializedName("public_repos")
+    val publicRepos: Int = 0,
+    @SerializedName("company")
     val company: String = "",
     val blog: String = "",
     val repository: String = "",
