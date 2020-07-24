@@ -3,7 +3,6 @@ package com.fiqsky.githubuserapp.activity
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
-import android.util.Log
 import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
@@ -51,7 +50,7 @@ class MainActivity : AppCompatActivity(), TextView.OnEditorActionListener {
 
     private fun initRecyclerView() {
         adapter = FollowingAdapter(onClick = { user: User ->
-            val intent = Intent(this, InfoActivity::class.java)
+            val intent = Intent(this@MainActivity, InfoActivity::class.java)
             intent.putExtra(InfoActivity.EXTRA_USER, user)
             startActivity(intent)
         })
