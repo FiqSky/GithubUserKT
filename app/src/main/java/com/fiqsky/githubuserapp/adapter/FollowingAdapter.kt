@@ -1,14 +1,12 @@
 package com.fiqsky.githubuserapp.adapter
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.fiqsky.githubuserapp.R
 import com.fiqsky.githubuserapp.User
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_user.view.*
 
 class FollowingAdapter(
@@ -38,19 +36,16 @@ class FollowingAdapter(
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(user: User?) {
-            with(itemView) {
-                Glide.with(context)
-                    .load(user?.avatarUrl)
-                    .placeholder(R.drawable.placeholder)
-                    .error(android.R.color.darker_gray)
-                    .into(itemView.iv_avatar)
-                itemView.tv_name.text = user?.name
-                itemView.tv_username.text = user?.userName
-                itemView.setOnClickListener {
-                    if (user != null) {
-                        onClick?.invoke(user)
-                    }
+        fun bind(user: User?){
+            Picasso.get()
+                .load(user?.avatarUrl)
+                .placeholder(R.drawable.placeholder)
+                .into(itemView.iv_avatar)
+            itemView.tv_name.text = user?.name
+            itemView.tv_username.text = user?.userName
+            itemView.setOnClickListener {
+                if (user != null) {
+                    onClick?.invoke(user)
                 }
             }
         }

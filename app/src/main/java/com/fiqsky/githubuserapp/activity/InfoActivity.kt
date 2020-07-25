@@ -155,6 +155,10 @@ class InfoActivity : AppCompatActivity() {
         txt_location.text = user?.location
         txt_work.text = user?.company
         txt_link.text = user?.blog
+        Picasso.get()
+            .load(user?.avatarUrl)
+            .placeholder(R.drawable.placeholder)
+            .into(img_avatar)
         Glide.with(this@InfoActivity)
             .load(user?.avatarUrl)
             .placeholder(R.drawable.placeholder)
