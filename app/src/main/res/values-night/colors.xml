@@ -4,4 +4,5 @@
     <color name="colorPrimary">#303030</color>
     <color name="colorPrimaryDark">#202020</color>
     <color name="colorAccent">#00B8D4</color>
+    <color name="whiteActivityInfo">#202020</color>
 </resources>

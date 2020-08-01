@@ -20,13 +20,11 @@ class UserAdapter(private val listuser: ArrayList<User>) : RecyclerView.Adapter<
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val ivAvatar: ImageView = itemView.findViewById(R.id.iv_avatar)
-        private val tvName: TextView = itemView.findViewById(R.id.tv_name)
         private val tvUsername: TextView = itemView.findViewById(R.id.tv_username)
         fun bind(user: User){
             Picasso.get()
                 .load(user.avatar)
                 .into(ivAvatar)
-            tvName.text = user.name
 //            tvUsername.text = user.username
 
             itemView.setOnClickListener { onItemClickCallback?.onItemClicked(user) }

@@ -41,7 +41,6 @@ class FollowingAdapter(
                 .load(user?.avatarUrl)
                 .placeholder(R.drawable.placeholder)
                 .into(itemView.iv_avatar)
-            itemView.tv_name.text = user?.name
             itemView.tv_username.text = user?.userName
             itemView.setOnClickListener {
                 if (user != null) {

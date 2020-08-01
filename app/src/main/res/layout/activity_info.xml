@@ -10,7 +10,7 @@
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white">
+            android:background="@color/whiteActivityInfo">
 
                 <include layout="@layout/info_user"/>
                 <include layout="@layout/desc_user"/>
