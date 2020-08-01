@@ -29,6 +29,7 @@ class InfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info)
 //        title = getString(R.id.detail)
+
         val user = intent.getParcelableExtra<User>(EXTRA_USER)
         val userName = user?.userName ?: ""
         getDetail(userName)
@@ -36,64 +37,6 @@ class InfoActivity : AppCompatActivity() {
         adapter = SectionAdapter(supportFragmentManager)
         view_pager.adapter = adapter
         tabs.setupWithViewPager(view_pager)
-
-//        val list = getListUser()
-
-        //Inisialisasi adapter untuk view pager
-//        val adapter = SectionAdapter(supportFragmentManager)
-
-        //Memanggil method addFragment() untuk menambahkan fragment dan title
-//        adapter.addFragment(FollowingFragment.newInstance("holla"), "Follower")
-//        adapter.addFragment(FollowingFragment.newInstance("ahoy"), "Following")
-
-        //set adapter ke dalam view pager
-//        view_pager.adapter = adapter
-        //Jangan lupa untuk menghubungkan antara TabLayout dan ViewPager, dengan method setupWithViewPager()
-//        tabs.setupWithViewPager(view_pager)
-
-//        val user = intent.getParcelableExtra<User>(
-//            EXTRA_USER
-//        )
-//
-//        if (user != null) {
-//            Picasso.get()
-//                .load(user.avatar)
-//                .placeholder(R.drawable.placeholder)
-//                .into(img_avatar)
-//            txt_name.text = user.name
-//            txt_location.text = user.location
-//            txt_work.text = user.company
-//            txt_repo.text = user.repository
-//            txt_followers.text = user.followers
-//            txt_following.text = user.following
-//        }
-//    }
-//
-//    private fun getListUser(): ArrayList<User> {
-//        val dataName = resources.getStringArray(R.array.name)
-//        val dataUsername = resources.getStringArray(R.array.username)
-//        val dataLocation = resources.getStringArray(R.array.location)
-//        val dataRepository = resources.getStringArray(R.array.repository)
-//        val dataCompany = resources.getStringArray(R.array.company)
-//        val dataFollowers = resources.getStringArray(R.array.followers)
-//        val dataFollowing = resources.getStringArray(R.array.following)
-//        val dataAvatar = resources.obtainTypedArray(R.array.avatar)
-//
-//        val listUser = ArrayList<User>()
-//        for (position in dataName.indices) {
-//            val user = User(
-//                dataAvatar.getResourceId(position, -1),
-//                dataName[position],
-//                dataUsername[position],
-//                dataLocation[position],
-//                dataRepository[position],
-//                dataCompany[position],
-//                dataFollowers[position],
-//                dataFollowing[position]
-//            )
-//            users.add(user)
-//        }
-//        return listUser
     }
     private fun getFollowers(userName: String, title: String) {
         val call = ApiClient.service.getFollowers(userName)
@@ -156,10 +99,6 @@ class InfoActivity : AppCompatActivity() {
         txt_work.text = user?.company
         txt_link.text = user?.blog
         Picasso.get()
-            .load(user?.avatarUrl)
-            .placeholder(R.drawable.placeholder)
-            .into(img_avatar)
-        Glide.with(this@InfoActivity)
             .load(user?.avatarUrl)
             .placeholder(R.drawable.placeholder)
             .into(img_avatar)

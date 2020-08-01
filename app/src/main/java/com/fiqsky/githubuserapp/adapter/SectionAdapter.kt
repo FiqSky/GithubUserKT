@@ -20,5 +20,6 @@ class SectionAdapter(fragmentManager: FragmentManager): FragmentPagerAdapter(fra
     fun addFragment(fragment: Fragment, title: String) {
         fragments.add(fragment)
         titles.add(title)
+        notifyDataSetChanged()
     }
 }
