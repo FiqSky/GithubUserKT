@@ -1,5 +1,6 @@
 package com.fiqsky.githubuserapp.api
 
+import com.fiqsky.githubuserapp.BuildConfig
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -8,7 +9,7 @@ class ApiClient{
         private val retrofit: Retrofit by lazy {
             Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("https://api.github.com/")
+                .baseUrl(BuildConfig.BASE_URL)
                 .build()
         }
 

@@ -1,5 +1,6 @@
 package com.fiqsky.githubuserapp.api
 
+import com.fiqsky.githubuserapp.BuildConfig
 import com.fiqsky.githubuserapp.SearchResponse
 import com.fiqsky.githubuserapp.User
 import retrofit2.Call
@@ -10,7 +11,7 @@ import retrofit2.http.Query
 
 interface ApiService {
     @GET("search/users")
-    @Headers("Authorization: 714733490150fe9148730893ab8c3b9104734a4d")
+    @Headers(BuildConfig.TOKEN)
     fun getSearchResult(
         @Query("q") q: String
     ): Call<SearchResponse>

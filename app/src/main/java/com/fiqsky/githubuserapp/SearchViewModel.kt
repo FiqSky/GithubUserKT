@@ -16,7 +16,6 @@ class SearchViewModel: ViewModel() {
     fun searchUser(query: String) {
         val call = ApiClient.service.getSearchResult(query)
         call.enqueue(object : Callback<SearchResponse> {
-            //Responnya berhasil, Http code == 200
             override fun onResponse(
                 call: Call<SearchResponse>,
                 response: Response<SearchResponse>
