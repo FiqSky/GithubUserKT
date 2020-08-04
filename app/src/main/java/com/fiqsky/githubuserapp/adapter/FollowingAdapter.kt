@@ -40,6 +40,7 @@ class FollowingAdapter(
             Picasso.get()
                 .load(user?.avatarUrl)
                 .placeholder(R.drawable.placeholder)
+                .error(R.color.design_default_color_error)
                 .into(itemView.iv_avatar)
             itemView.tv_username.text = user?.userName
             itemView.setOnClickListener {
@@ -48,6 +49,5 @@ class FollowingAdapter(
                 }
             }
         }
-
     }
 }

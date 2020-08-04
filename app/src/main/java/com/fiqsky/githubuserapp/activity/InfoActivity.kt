@@ -2,7 +2,6 @@ package com.fiqsky.githubuserapp.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
 import com.fiqsky.githubuserapp.FollowingFragment
 import com.fiqsky.githubuserapp.R
 import com.fiqsky.githubuserapp.User
@@ -101,6 +100,7 @@ class InfoActivity : AppCompatActivity() {
         Picasso.get()
             .load(user?.avatarUrl)
             .placeholder(R.drawable.placeholder)
+            .error(R.color.design_default_color_error)
             .into(img_avatar)
     }
 }
