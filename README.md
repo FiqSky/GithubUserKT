@@ -1,4 +1,4 @@
-# FiqSky
+# GitHub User App (Kotlin)
 
 This repo for beasiswa BFAA IDCamp2020.
 
