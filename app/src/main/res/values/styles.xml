@@ -13,7 +13,7 @@
 
     <style name="cirImageView" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">60dp</item>
+        <item name="cornerSize">55dp</item>
     </style>
 
 </resources>

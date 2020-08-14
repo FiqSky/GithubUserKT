@@ -1,5 +1,8 @@
 package com.fiqsky.githubuserapp.activity
 
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.fiqsky.githubuserapp.FollowingFragment
@@ -89,14 +92,31 @@ class InfoActivity : AppCompatActivity() {
         })
     }
 
+    @SuppressLint("SetText")
     private fun initDetailUser(user: User?){
         txt_repo.text = user?.publicRepos.toString()
         txt_followers.text = user?.totalFollowers.toString()
         txt_followings.text = user?.totalFollowing.toString()
         txt_name.text = user?.name
-        txt_location.text = user?.location
-        txt_work.text = user?.company
-        txt_link.text = user?.blog
+        if (user?.location != null){
+            txt_location.text = user?.location
+        }else{
+            txt_location.text = "-"
+        }
+        if (user?.company != null) {
+            txt_work.text = user.company
+        } else {
+            txt_work.text = "-"
+        }
+        if (user?.blog != null) {
+            val url = user.blog
+            txt_link.setOnClickListener {
+                val intent = Intent (Intent.ACTION_VIEW, Uri.parse(url))
+                startActivity(intent)
+            }.toString()
+        } else{
+            txt_link.text = "-"
+        }
         Picasso.get()
             .load(user?.avatarUrl)
             .placeholder(R.drawable.placeholder)
