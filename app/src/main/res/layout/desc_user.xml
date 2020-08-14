@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
+    android:padding="10dp"
     app:layout_scrollFlags="scroll"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -54,11 +55,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="3dp"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/img_location"
+        app:layout_constraintStart_toEndOf="@+id/img_work"
         app:layout_constraintTop_toBottomOf="@id/txt_location"
         android:text="@string/work"/>
 
     <ImageView
+        android:id="@+id/img_link"
         android:layout_width="16dp"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_baseline_link_24"
@@ -73,7 +75,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="2dp"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/img_work"
+        app:layout_constraintStart_toEndOf="@+id/img_link"
         app:layout_constraintTop_toBottomOf="@id/txt_work"
         android:text="@string/link"/>
 
