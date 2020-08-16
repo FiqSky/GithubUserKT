@@ -14,10 +14,10 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_info.*
 import kotlinx.android.synthetic.main.desc_user.*
 import kotlinx.android.synthetic.main.info_user.*
-import java.util.ArrayList
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class InfoActivity : AppCompatActivity() {
 
@@ -93,13 +93,13 @@ class InfoActivity : AppCompatActivity() {
     }
 
     @SuppressLint("SetText")
-    private fun initDetailUser(user: User?){
+    private fun initDetailUser(user: User?) {
         txt_repo.text = user?.publicRepos.toString()
         txt_followers.text = user?.totalFollowers.toString()
         txt_followings.text = user?.totalFollowing.toString()
         txt_name.text = user?.name
         if (user?.location != null){
-            txt_location.text = user?.location
+            txt_location.text = user.location
         }else{
             txt_location.text = "-"
         }
@@ -113,7 +113,8 @@ class InfoActivity : AppCompatActivity() {
             txt_link.setOnClickListener {
                 val intent = Intent (Intent.ACTION_VIEW, Uri.parse(url))
                 startActivity(intent)
-            }.toString()
+            }
+            txt_link.text = url
         } else{
             txt_link.text = "-"
         }

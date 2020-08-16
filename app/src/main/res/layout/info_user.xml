@@ -11,7 +11,7 @@
         android:layout_height="110dp"
         android:contentDescription="@string/foto_profil"
         android:src="@drawable/placeholder"
-        android:layout_margin="16dp"
+        android:layout_margin="20dp"
         app:shapeAppearanceOverlay="@style/cirImageView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +30,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginEnd="25dp"
+            android:layout_marginEnd="30dp"
             android:orientation="vertical">
 
             <TextView
@@ -75,7 +75,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="30dp"
             android:orientation="vertical">
 
             <TextView
