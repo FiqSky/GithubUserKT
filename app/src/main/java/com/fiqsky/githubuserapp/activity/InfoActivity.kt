@@ -30,7 +30,8 @@ class InfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info)
-//        title = getString(R.id.detail)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        title = getString(R.string.detail_title)
 
         val user = intent.getParcelableExtra<User>(EXTRA_USER)
         val userName = user?.userName ?: ""
@@ -92,22 +93,30 @@ class InfoActivity : AppCompatActivity() {
         })
     }
 
-    @SuppressLint("SetText")
+    @SuppressLint("SetTextI18n")
     private fun initDetailUser(user: User?) {
         txt_repo.text = user?.publicRepos.toString()
         txt_followers.text = user?.totalFollowers.toString()
         txt_followings.text = user?.totalFollowing.toString()
-        txt_name.text = user?.name
+
+        if (user?.name != null) {
+            txt_name.text = user.name
+        } else {
+            txt_name.text = "Unknown"
+        }
+
         if (user?.location != null){
             txt_location.text = user.location
         }else{
             txt_location.text = "-"
         }
+
         if (user?.company != null) {
             txt_work.text = user.company
         } else {
             txt_work.text = "-"
         }
+
         if (user?.blog != null) {
             val url = user.blog
             txt_link.setOnClickListener {
@@ -115,9 +124,10 @@ class InfoActivity : AppCompatActivity() {
                 startActivity(intent)
             }
             txt_link.text = url
-        } else{
+        } else {
             txt_link.text = "-"
         }
+
         Picasso.get()
             .load(user?.avatarUrl)
             .placeholder(R.drawable.placeholder)

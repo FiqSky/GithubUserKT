@@ -28,11 +28,12 @@ class MainActivity : AppCompatActivity(), TextView.OnEditorActionListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+//        actionBar?.setDisplayHomeAsUpEnabled(true)
 
         searchViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(SearchViewModel::class.java)
 
         searchViewModel.searchResults.observe(this, Observer { list: List<User>? ->
-            showProgress(false)
+            progress(false)
             adapter.addAll(list)
         })
 
@@ -51,7 +52,8 @@ class MainActivity : AppCompatActivity(), TextView.OnEditorActionListener {
         rv_main.adapter = adapter
     }
 
-    private fun showProgress(isVisible: Boolean) {
+    private fun progress(isVisible: Boolean) {
+        iv_search.visibility = GONE
         progress_bar.visibility = if (isVisible) {
             VISIBLE
         } else {
@@ -79,37 +81,10 @@ class MainActivity : AppCompatActivity(), TextView.OnEditorActionListener {
     override fun onEditorAction(textView: TextView?, actionId: Int, event: KeyEvent?): Boolean {
         if (actionId == EditorInfo.IME_ACTION_SEARCH) {
             val query = textView?.text.toString()
-            showProgress(true)
+            progress(true)
             searchViewModel.searchUser(query)
             return true
         }
         return false
     }
-
-    /*private fun searchUser(query: String) {
-        //Menampilkan loading progressbar
-        progress_bar.visibility = VISIBLE
-        val call = ApiClient.service.getSearchResult(query)
-        call.enqueue(object : Callback<SearchResponse> {
-            //Responnya berhasil, Http code == 200
-            override fun onResponse(
-                call: Call<SearchResponse>,
-                response: Response<SearchResponse>
-            ) {
-                if (response.isSuccessful) {
-                    val list = response.body()?.items
-                    //tambah ke adapter
-                    adapter.addAll(list)
-                    //Menghilangkan progressbar
-                    progress_bar.visibility = GONE
-                }
-
-            }
-
-            override fun onFailure(call: Call<SearchResponse>, t: Throwable) {
-                progress_bar.visibility = GONE
-//                Snackbar.make(this,"Nope",Snackbar.LENGTH_LONG).show()
-            }
-        })
-    }*/
 }

@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_work"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_location"
+        app:layout_constraintTop_toBottomOf="@id/txt_location"
         android:contentDescription="@string/foto_profil" />
 
     <TextView
@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_baseline_link_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_work"
+        app:layout_constraintTop_toBottomOf="@id/txt_work"
         android:contentDescription="@string/foto_profil" />
 
     <TextView

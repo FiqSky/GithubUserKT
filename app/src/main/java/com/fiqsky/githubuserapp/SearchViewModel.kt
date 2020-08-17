@@ -1,9 +1,11 @@
 package com.fiqsky.githubuserapp
 
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.fiqsky.githubuserapp.api.ApiClient
+import com.google.android.material.snackbar.Snackbar
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,7 +31,6 @@ class SearchViewModel: ViewModel() {
 
             override fun onFailure(call: Call<SearchResponse>, t: Throwable) {
                 _searchResults.postValue(emptyList())
-
             }
         })
     }
