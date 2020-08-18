@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.fiqsky.githubuserapp.FollowingFragment
 import com.fiqsky.githubuserapp.R
@@ -31,11 +32,12 @@ class InfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        title = getString(R.string.detail_title)
 
         val user = intent.getParcelableExtra<User>(EXTRA_USER)
         val userName = user?.userName ?: ""
         getDetail(userName)
+
+        title = userName
 
         adapter = SectionAdapter(supportFragmentManager)
         view_pager.adapter = adapter
@@ -46,6 +48,7 @@ class InfoActivity : AppCompatActivity() {
         call.enqueue(object : Callback<List<User>> {
             override fun onResponse(call: Call<List<User>>, response: Response<List<User>>
             ) {
+                Log.d("message", "onResponse: " + response.body())
                 if (response.isSuccessful) {
                     val list = ArrayList<User>(response.body().orEmpty())
                     adapter.addFragment(FollowingFragment.newInstance(list), title)
@@ -53,7 +56,7 @@ class InfoActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<List<User>>, t: Throwable) {
-
+                Log.d("message", "onFailure: " + t.message)
             }
 
         })
@@ -63,12 +66,13 @@ class InfoActivity : AppCompatActivity() {
         val call = ApiClient.service.getFollowing(userName)
         call.enqueue(object : Callback<List<User>> {
             override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
+                Log.d("message", "onResponse: " + response.body())
                 val list = ArrayList<User>(response.body().orEmpty())
                 adapter.addFragment(FollowingFragment.newInstance(list), title)
             }
 
             override fun onFailure(call: Call<List<User>>, t: Throwable) {
-
+                Log.d("message", "onFailure: " + t.message)
             }
 
         })
@@ -79,6 +83,7 @@ class InfoActivity : AppCompatActivity() {
         val call = ApiClient.service.getDetail(userName)
         call.enqueue(object : Callback<User> {
             override fun onResponse(call: Call<User>, response: Response<User>) {
+                Log.d("message", "onResponse: " + response.body())
                 if (response.isSuccessful) {
                     val user = response.body()
                     initDetailUser(user)
@@ -88,7 +93,7 @@ class InfoActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<User>, t: Throwable) {
-
+                Log.d("message", "onFailure: " + t.message)
             }
         })
     }

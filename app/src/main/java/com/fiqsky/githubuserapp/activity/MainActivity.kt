@@ -15,7 +15,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fiqsky.githubuserapp.R
-import com.fiqsky.githubuserapp.SearchViewModel
+import com.fiqsky.githubuserapp.viewmodel.SearchViewModel
 import com.fiqsky.githubuserapp.User
 import com.fiqsky.githubuserapp.adapter.FollowingAdapter
 import kotlinx.android.synthetic.main.activity_main.*
@@ -30,7 +30,8 @@ class MainActivity : AppCompatActivity(), TextView.OnEditorActionListener {
         setContentView(R.layout.activity_main)
 //        actionBar?.setDisplayHomeAsUpEnabled(true)
 
-        searchViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(SearchViewModel::class.java)
+        searchViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
+            SearchViewModel::class.java)
 
         searchViewModel.searchResults.observe(this, Observer { list: List<User>? ->
             progress(false)
