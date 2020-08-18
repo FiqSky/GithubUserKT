@@ -10,7 +10,10 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="6dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="@string/cari">
 
@@ -19,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:imeOptions="actionSearch"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/textColor"
             android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -37,8 +40,9 @@
 
     <ImageView
         android:id="@+id/iv_search"
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="140dp"
         android:layout_gravity="center"
         android:src="@drawable/v_search"
         android:contentDescription="@string/search_img" />
@@ -48,5 +52,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/item_user"/>
+
+    <ImageView
+        android:id="@+id/iv_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="110dp"
+        android:src="@drawable/v_search"
+        android:layout_gravity="center"
+        android:contentDescription="@string/error"/>
 
 </LinearLayout>
