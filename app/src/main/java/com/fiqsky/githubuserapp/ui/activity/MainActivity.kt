@@ -1,4 +1,4 @@
-package com.fiqsky.githubuserapp.activity
+package com.fiqsky.githubuserapp.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -16,8 +16,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fiqsky.githubuserapp.R
 import com.fiqsky.githubuserapp.viewmodel.SearchViewModel
-import com.fiqsky.githubuserapp.User
-import com.fiqsky.githubuserapp.adapter.FollowingAdapter
+import com.fiqsky.githubuserapp.utils.User
+import com.fiqsky.githubuserapp.ui.adapter.FollowingAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), TextView.OnEditorActionListener {
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity(), TextView.OnEditorActionListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        actionBar?.setDisplayHomeAsUpEnabled(true)
+        actionBar?.setDisplayHomeAsUpEnabled(true)
 
         searchViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
             SearchViewModel::class.java)

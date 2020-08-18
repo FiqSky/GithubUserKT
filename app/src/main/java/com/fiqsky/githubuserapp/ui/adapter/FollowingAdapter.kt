@@ -1,12 +1,11 @@
-package com.fiqsky.githubuserapp.adapter
+package com.fiqsky.githubuserapp.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.fiqsky.githubuserapp.R
-import com.fiqsky.githubuserapp.User
-import com.squareup.picasso.Callback
+import com.fiqsky.githubuserapp.utils.User
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_user.view.*
 

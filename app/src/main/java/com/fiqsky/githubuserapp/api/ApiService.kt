@@ -1,8 +1,8 @@
 package com.fiqsky.githubuserapp.api
 
 import com.fiqsky.githubuserapp.BuildConfig
-import com.fiqsky.githubuserapp.SearchResponse
-import com.fiqsky.githubuserapp.User
+import com.fiqsky.githubuserapp.utils.SearchResponse
+import com.fiqsky.githubuserapp.utils.User
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers

@@ -1,4 +1,4 @@
-package com.fiqsky.githubuserapp.adapter
+package com.fiqsky.githubuserapp.ui.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

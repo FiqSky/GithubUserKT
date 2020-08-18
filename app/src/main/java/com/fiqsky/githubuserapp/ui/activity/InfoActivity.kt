@@ -1,4 +1,4 @@
-package com.fiqsky.githubuserapp.activity
+package com.fiqsky.githubuserapp.ui.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -6,10 +6,10 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.fiqsky.githubuserapp.FollowingFragment
+import com.fiqsky.githubuserapp.ui.fragment.FollowingFragment
 import com.fiqsky.githubuserapp.R
-import com.fiqsky.githubuserapp.User
-import com.fiqsky.githubuserapp.adapter.SectionAdapter
+import com.fiqsky.githubuserapp.utils.User
+import com.fiqsky.githubuserapp.ui.adapter.SectionAdapter
 import com.fiqsky.githubuserapp.api.ApiClient
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_info.*
@@ -31,7 +31,7 @@ class InfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val user = intent.getParcelableExtra<User>(EXTRA_USER)
         val userName = user?.userName ?: ""

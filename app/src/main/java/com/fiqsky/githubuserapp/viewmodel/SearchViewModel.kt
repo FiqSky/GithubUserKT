@@ -4,8 +4,8 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.fiqsky.githubuserapp.SearchResponse
-import com.fiqsky.githubuserapp.User
+import com.fiqsky.githubuserapp.utils.SearchResponse
+import com.fiqsky.githubuserapp.utils.User
 import com.fiqsky.githubuserapp.api.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
