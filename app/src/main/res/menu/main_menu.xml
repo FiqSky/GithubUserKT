@@ -4,8 +4,8 @@
 
     <item
         android:id="@+id/menu_settings"
-        android:title="@string/pengaturan"
         android:icon="@drawable/ic_baseline_settings_24"
-        app:showAsAction="ifRoom"/>
+        android:title="@string/pengaturan"
+        app:showAsAction="ifRoom" />
 
 </menu>

@@ -6,11 +6,11 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.fiqsky.githubuserapp.ui.fragment.FollowingFragment
 import com.fiqsky.githubuserapp.R
-import com.fiqsky.githubuserapp.utils.User
-import com.fiqsky.githubuserapp.ui.adapter.SectionAdapter
 import com.fiqsky.githubuserapp.api.ApiClient
+import com.fiqsky.githubuserapp.ui.adapter.SectionAdapter
+import com.fiqsky.githubuserapp.ui.fragment.FollowingFragment
+import com.fiqsky.githubuserapp.utils.User
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_info.*
 import kotlinx.android.synthetic.main.desc_user.*
@@ -43,10 +43,12 @@ class InfoActivity : AppCompatActivity() {
         view_pager.adapter = adapter
         tabs.setupWithViewPager(view_pager)
     }
+
     private fun getFollowers(userName: String, title: String) {
         val call = ApiClient.service.getFollowers(userName)
         call.enqueue(object : Callback<List<User>> {
-            override fun onResponse(call: Call<List<User>>, response: Response<List<User>>
+            override fun onResponse(
+                call: Call<List<User>>, response: Response<List<User>>
             ) {
                 Log.d("message", "onResponse: " + response.body())
                 if (response.isSuccessful) {
@@ -110,9 +112,9 @@ class InfoActivity : AppCompatActivity() {
             txt_name.text = "Unknown"
         }
 
-        if (user?.location != null){
+        if (user?.location != null) {
             txt_location.text = user.location
-        }else{
+        } else {
             txt_location.text = "-"
         }
 
@@ -125,7 +127,7 @@ class InfoActivity : AppCompatActivity() {
         if (user?.blog != null) {
             val url = user.blog
             txt_link.setOnClickListener {
-                val intent = Intent (Intent.ACTION_VIEW, Uri.parse(url))
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                 startActivity(intent)
             }
             txt_link.text = url

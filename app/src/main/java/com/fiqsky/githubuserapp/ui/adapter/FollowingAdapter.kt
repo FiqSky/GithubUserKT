@@ -36,7 +36,7 @@ class FollowingAdapter(
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(user: User?){
+        fun bind(user: User?) {
             Picasso.get()
                 .load(user?.avatarUrl)
                 .placeholder(R.drawable.placeholder)

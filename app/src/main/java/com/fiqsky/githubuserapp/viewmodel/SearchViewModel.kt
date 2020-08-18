@@ -4,14 +4,14 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.fiqsky.githubuserapp.api.ApiClient
 import com.fiqsky.githubuserapp.utils.SearchResponse
 import com.fiqsky.githubuserapp.utils.User
-import com.fiqsky.githubuserapp.api.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class SearchViewModel: ViewModel() {
+class SearchViewModel : ViewModel() {
 
     private val _searchResults: MutableLiveData<List<User>> = MutableLiveData()
     val searchResults: LiveData<List<User>> = _searchResults

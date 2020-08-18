@@ -14,8 +14,8 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         each {
-            buildConfigField("String","BASE_URL",BASE_URL)
-            buildConfigField("String","TOKEN",TOKEN)
+            buildConfigField("String", "BASE_URL", BASE_URL)
+            buildConfigField("String", "TOKEN", TOKEN)
         }
     }
 
