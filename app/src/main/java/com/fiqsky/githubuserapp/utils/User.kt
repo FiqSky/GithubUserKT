@@ -1,4 +1,4 @@
-package com.fiqsky.githubuserapp
+package com.fiqsky.githubuserapp.utils
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

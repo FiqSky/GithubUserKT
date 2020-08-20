@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Night Mode Colors-->
-    <color name="colorPrimary">#303030</color>
-    <color name="colorPrimaryDark">#202020</color>
+    <color name="colorPrimary">#BB86FC</color>
+    <color name="colorPrimaryDark">#121212</color>
     <color name="colorAccent">#00B8D4</color>
     <color name="whiteActivityInfo">#202020</color>
+    <color name="textColor">#FFFFFF</color>
 </resources>
