@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.FollowingFragment">
+    tools:context=".FollowingFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_following"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/item_user" />
+        tools:listitem="@layout/item_user"/>
 
 </FrameLayout>
