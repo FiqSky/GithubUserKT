@@ -10,9 +10,7 @@
     <string name="following">Mengikuti</string>
     <string name="foto_profil">Foto Profil</string>
     <string name="pengaturan">pengaturan</string>
-    <string name="link"><u>Link</u></string>
-    <string name="cari">Cari..</string>
-    <string name="search_img">search_img</string>
+    <string name="link">Link</string>
 
     <!-- Other string resources-->
 
