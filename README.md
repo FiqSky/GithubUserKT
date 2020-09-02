@@ -1,4 +1,5 @@
-# GitHub User App (Kotlin)
+# ~GitHub User App (Kotlin)~
+# CLOSED
 
 This repo for beasiswa BFAA IDCamp2020.
 
